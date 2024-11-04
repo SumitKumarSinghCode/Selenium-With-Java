@@ -3,6 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.Arrays;
 
 public class Introduction {
     public static void main(String[] args) throws InterruptedException {
@@ -13,8 +14,7 @@ public class Introduction {
         System.out.println(driver.getTitle());
         System.out.println(driver.getCurrentUrl());
 
-        //Method->1
-        /*
+
         driver.findElement(By.id("inputUsername")).sendKeys("sumitsingh@gmail.com");
         driver.findElement(By.name("inputPassword")).sendKeys("1234");
         driver.findElement(By.id("chkboxOne")).click();
@@ -24,6 +24,7 @@ public class Introduction {
         System.out.println(logginErrorMessage);
 
         // for resetting the password
+        String ResetErrorMessage=null;
         if (logginErrorMessage.equalsIgnoreCase("* incorrect username or password")){
             driver.findElement(By.linkText("Forgot your password?")).click();
             Thread.sleep(1000);
@@ -31,11 +32,12 @@ public class Introduction {
             driver.findElement(By.cssSelector("input[placeholder='Email']")).sendKeys("Sumit@gmail.com");
             driver.findElement(By.cssSelector("input[placeholder='Phone Number']")).sendKeys(("7428956203"));
             driver.findElement(By.cssSelector("button.reset-pwd-btn")).click();
-            String ResetErrorMessage = driver.findElement(By.cssSelector("p.infoMsg")).getText();
+            ResetErrorMessage = driver.findElement(By.cssSelector("p.infoMsg")).getText();
             System.out.println(ResetErrorMessage);
-        }*/
+        }
 
-        //Method->2
+        driver.findElement(By.cssSelector("button[class='go-to-login-btn']")).click();
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("#inputUsername")).sendKeys("rahul");
         driver.findElement(By.cssSelector("input[placeholder*='Pass']")).sendKeys("rahulshettyacademy");
         driver.findElement(By.cssSelector("#chkboxOne")).click();
