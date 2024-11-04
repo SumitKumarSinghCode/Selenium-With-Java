@@ -7,12 +7,14 @@ import java.time.Duration;
 public class Introduction {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver=new ChromeDriver();
-
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // it will wait till 5 seconds for the response.
 
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
         System.out.println(driver.getTitle());
         System.out.println(driver.getCurrentUrl());
+
+        //Method->1
+        /*
         driver.findElement(By.id("inputUsername")).sendKeys("sumitsingh@gmail.com");
         driver.findElement(By.name("inputPassword")).sendKeys("1234");
         driver.findElement(By.id("chkboxOne")).click();
@@ -31,7 +33,14 @@ public class Introduction {
             driver.findElement(By.cssSelector("button.reset-pwd-btn")).click();
             String ResetErrorMessage = driver.findElement(By.cssSelector("p.infoMsg")).getText();
             System.out.println(ResetErrorMessage);
-        }
-        driver.close();
+        }*/
+
+        //Method->2
+        driver.findElement(By.cssSelector("#inputUsername")).sendKeys("rahul");
+        driver.findElement(By.cssSelector("input[placeholder*='Pass']")).sendKeys("rahulshettyacademy");
+        driver.findElement(By.cssSelector("#chkboxOne")).click();
+        driver.findElement(By.cssSelector("#chkboxTwo")).click();
+        driver.findElement(By.cssSelector("button[class*='submit']")).click();
+
     }
 }
