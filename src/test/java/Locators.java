@@ -3,9 +3,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
-import java.util.Arrays;
 
-public class Introduction {
+
+public class Locators {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver=new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // it will wait till 5 seconds for the response.
@@ -13,7 +13,6 @@ public class Introduction {
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
         System.out.println(driver.getTitle());
         System.out.println(driver.getCurrentUrl());
-
 
         driver.findElement(By.id("inputUsername")).sendKeys("sumitsingh@gmail.com");
         driver.findElement(By.name("inputPassword")).sendKeys("1234");
