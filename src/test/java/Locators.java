@@ -43,6 +43,5 @@ public class Locators {
         driver.findElement(By.cssSelector("#chkboxTwo")).click();
         driver.findElement(By.cssSelector("button[class*='submit']")).click();
 
-
     }
 }
