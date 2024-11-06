@@ -37,7 +37,7 @@ public class Locators {
 
         driver.findElement(By.cssSelector("button[class='go-to-login-btn']")).click();
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("#inputUsername")).sendKeys("rahul");
+        driver.findElement(By.cssSelector("#inputUsername")).sendKeys("rahul"); //id
         driver.findElement(By.cssSelector("input[placeholder*='Pass']")).sendKeys("rahulshettyacademy");
         driver.findElement(By.cssSelector("#chkboxOne")).click();
         driver.findElement(By.cssSelector("#chkboxTwo")).click();
